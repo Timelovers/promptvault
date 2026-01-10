@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Prompt, PromptVersion, ViewState } from './types';
 import { INITIAL_PROMPTS, CATEGORIES, DISCOVERY_RESOURCES } from './constants';
-import { Plus, Search, Sparkles, ChevronLeft, Copy, Check, Import, Export, ExternalLink, Heart, Clock, User, Bookmark, MessageSquare, Zap, ShieldCheck, ArrowDown, History } from './components/Icon';
+import { Plus, Search, Sparkles, ChevronLeft, Copy, Check, Import, Export, ExternalLink, Heart, Clock, User, Bookmark, MessageSquare, Zap, ShieldCheck, ArrowDown, History, Trash } from './components/Icon';
 import { optimizePrompt } from './services/geminiService';
 
 const App: React.FC = () => {
@@ -47,6 +47,17 @@ const App: React.FC = () => {
   const handleToggleFavorite = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
     setPrompts(prompts.map(p => p.id === id ? { ...p, isFavorite: !p.isFavorite } : p));
+  };
+
+  const handleDeletePrompt = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (window.confirm('确定要删除这个提示词吗？')) {
+      setPrompts(prompts.filter(p => p.id !== id));
+      if (selectedId === id) {
+        setView('GALLERY');
+        setSelectedId(null);
+      }
+    }
   };
 
   const selectedPrompt = useMemo(() => 
@@ -233,6 +244,7 @@ const App: React.FC = () => {
                       onSelect={() => { setSelectedId(prompt.id); setView('DETAIL'); }}
                       onLike={(e) => handleToggleLike(prompt.id, e)}
                       onFavorite={(e) => handleToggleFavorite(prompt.id, e)}
+                      onDelete={(e) => handleDeletePrompt(prompt.id, e)}
                     />
                   ))}
                   {filteredPrompts.length === 0 && (
@@ -294,8 +306,9 @@ const PromptCard: React.FC<{
   prompt: Prompt, 
   onSelect: () => void,
   onLike: (e: React.MouseEvent) => void,
-  onFavorite: (e: React.MouseEvent) => void
-}> = ({ prompt, onSelect, onLike, onFavorite }) => {
+  onFavorite: (e: React.MouseEvent) => void,
+  onDelete: (e: React.MouseEvent) => void
+}> = ({ prompt, onSelect, onLike, onFavorite, onDelete }) => {
   const currentVersion = prompt.versions[0];
   const [copied, setCopied] = useState(false);
 
@@ -347,11 +360,6 @@ const PromptCard: React.FC<{
           <div className="text-slate-600 font-mono text-base leading-relaxed break-words whitespace-pre-wrap">
             {currentVersion.content}
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#F9FAFB] via-[#F9FAFB]/60 to-transparent flex flex-col items-center justify-end pb-6">
-            <button className="text-indigo-600 text-sm font-bold hover:underline bg-white/40 backdrop-blur-sm px-4 py-1 rounded-full border border-white/50">
-              登录查看完整内容
-            </button>
-          </div>
         </div>
 
         <div className="flex-1"></div>
@@ -379,6 +387,14 @@ const PromptCard: React.FC<{
           >
             <Bookmark className={`w-6 h-6 ${prompt.isFavorite ? 'text-yellow-400 fill-yellow-400' : ''}`} />
             <span className="text-xl">收藏</span>
+          </button>
+
+          <button 
+            onClick={onDelete}
+            className="flex items-center gap-2 hover:text-red-600 transition-colors p-3 hover:bg-red-50 rounded-2xl"
+          >
+            <Trash className="w-6 h-6" />
+            <span className="text-xl">删除</span>
           </button>
         </div>
       </div>
