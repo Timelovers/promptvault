@@ -1,5 +1,5 @@
 {
   "name": "PromptVault",
-  "description": "A high-end personal prompt knowledge base for collecting, structuring, and evolving AI prompts into powerful assets.",
+  "description": "A prompt square and personal library: fill in variables, keep versions, and rewrite with your own Gemini key.",
   "requestFramePermissions": []
 }
