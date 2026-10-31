@@ -138,7 +138,11 @@ export default function App() {
           setEditor(null);
           return;
         }
-        if (open) setOpen(null);
+        if (open) {
+          const active = document.activeElement;
+          if (active instanceof HTMLElement) active.blur();
+          setOpen(null);
+        }
         return;
       }
       if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;

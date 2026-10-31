@@ -111,16 +111,23 @@ export function PromptDrawer(props: PromptDrawerProps) {
 
   const visible = props.open && Boolean(props.prompt);
 
+  const close = () => {
+    const active = document.activeElement;
+    if (active instanceof HTMLElement) active.blur();
+    props.onClose();
+  };
+
   return (
     <>
       <div
         className={`fixed inset-0 bg-black/40 z-40 transition-opacity ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-        onClick={props.onClose}
+        onClick={close}
       />
       <aside
         role="dialog"
-        aria-modal={visible}
-        aria-hidden={!visible}
+        aria-modal={visible || undefined}
+        aria-hidden={visible ? undefined : true}
+        inert={visible ? undefined : true}
         aria-labelledby="drawer-title"
         className={`fixed z-50 bg-white dark:bg-slate-900 shadow-2xl right-0 top-0 h-full w-full sm:w-[560px] transition-transform duration-300 ${visible ? 'translate-x-0' : 'translate-x-full pointer-events-none'}`}
       >
@@ -128,7 +135,7 @@ export function PromptDrawer(props: PromptDrawerProps) {
           ref={closeRef}
           type="button"
           aria-label="关闭"
-          onClick={props.onClose}
+          onClick={close}
           className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/20 text-white hover:bg-black/40"
         >
           ✕
