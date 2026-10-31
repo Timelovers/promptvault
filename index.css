@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.var {
+  background: rgba(139, 92, 246, 0.18);
+  color: #7c3aed;
+  border-radius: 4px;
+  padding: 0 3px;
+}
+
+.dark .var {
+  color: #c4b5fd;
+}
+
+.scroll-x::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-x {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sticky-filters {
+  position: sticky;
+  top: var(--pv-header-h, 4rem);
+  z-index: 20;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.25), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .card-copy {
+    opacity: 1 !important;
+  }
+}

@@ -17,11 +17,11 @@ if git remote -v | grep -q "origin"; then
     echo ""
     echo "📝 接下来的步骤："
     echo "1. 前往你的 GitHub 仓库页面"
-    echo "2. 进入 Settings > Secrets and variables > Actions"
-    echo "3. 添加名为 API_KEY 的 secret，值为你的 Google Gemini API Key"
-    echo "4. 进入 Settings > Pages"
-    echo "5. 确保 Source 设置为 'GitHub Actions'"
-    echo "6. 等待几分钟，GitHub Actions 会自动部署你的网站"
+    echo "2. 进入 Settings > Pages"
+    echo "3. 确保 Source 设置为 'GitHub Actions'"
+    echo "4. 等待几分钟，GitHub Actions 会自动构建并发布网站"
+    echo "5. 构建不再需要 API_KEY。每位用户在网页「设置」里填写自己的 Gemini Key，只保存在自己的浏览器中。"
+    echo "   如果仓库里还留着旧的 API_KEY secret，可以删掉，工作流已经不再读取它。"
 else
     echo "❌ 尚未配置远程仓库"
     echo ""
@@ -40,4 +40,3 @@ else
     echo ""
     echo "或者，如果你已经创建了仓库，请告诉我仓库 URL，我可以帮你连接。"
 fi
-

@@ -1,0 +1,454 @@
+[
+  {
+    "id": "weekly-report",
+    "title": "周报生成器",
+    "description": "把零散的工作记录整理成结构清晰的周报，突出成果与风险。",
+    "category": "办公效率",
+    "model": "通用",
+    "tags": [
+      "周报",
+      "职场"
+    ],
+    "author": "林一",
+    "likes": 1284,
+    "uses": 5320,
+    "featured": true,
+    "cover": "from-sky-400 to-indigo-500",
+    "createdAt": "2026-10-20",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-09-02",
+        "note": "初版",
+        "content": "帮我把以下工作记录整理成周报：{{工作记录}}"
+      },
+      {
+        "version": 2,
+        "date": "2026-10-20",
+        "note": "增加结构与语气控制",
+        "content": "你是一名资深{{岗位}}。请将以下工作记录整理成周报，分为「本周成果」「问题与风险」「下周计划」三部分，语气{{语气}}，每部分不超过 5 条：\n\n{{工作记录}}"
+      }
+    ]
+  },
+  {
+    "id": "code-review",
+    "title": "代码审查助手",
+    "description": "按可读性、安全性、性能三个维度审查代码，给出可直接应用的修改建议。",
+    "category": "编程开发",
+    "model": "Claude",
+    "tags": [
+      "Code Review",
+      "重构"
+    ],
+    "author": "陈默",
+    "likes": 2310,
+    "uses": 9021,
+    "featured": true,
+    "cover": "from-emerald-400 to-teal-600",
+    "createdAt": "2026-10-12",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-10-12",
+        "note": "初版",
+        "content": "请以资深 {{语言}} 工程师的身份审查以下代码，从可读性、安全性、性能三个维度列出问题，按严重程度排序，并给出修改后的代码片段：\n\n```\n{{代码}}\n```"
+      }
+    ]
+  },
+  {
+    "id": "feynman",
+    "title": "费曼学习法导师",
+    "description": "用费曼学习法帮你检验是否真的理解了一个概念。",
+    "category": "学习成长",
+    "model": "通用",
+    "tags": [
+      "学习",
+      "费曼"
+    ],
+    "author": "苏小满",
+    "likes": 1876,
+    "uses": 4102,
+    "featured": true,
+    "cover": "from-amber-400 to-orange-500",
+    "createdAt": "2026-09-28",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-08-11",
+        "note": "初版",
+        "content": "用简单的话解释{{概念}}"
+      },
+      {
+        "version": 2,
+        "date": "2026-09-03",
+        "note": "加入追问",
+        "content": "请扮演费曼学习法导师。我会解释「{{概念}}」，你先让我讲，然后指出我解释中的漏洞并追问。"
+      },
+      {
+        "version": 3,
+        "date": "2026-09-28",
+        "note": "限定受众与轮次",
+        "content": "请扮演费曼学习法导师。我会向一个{{受众}}解释「{{概念}}」。\n1. 先让我讲解；\n2. 指出含糊或错误的地方；\n3. 用一个追问检验我的理解；\n最多进行 {{轮数}} 轮。"
+      }
+    ]
+  },
+  {
+    "id": "prd",
+    "title": "PRD 需求拆解",
+    "description": "把一句话需求拆成用户故事、验收标准与边界情况。",
+    "category": "产品设计",
+    "model": "GPT",
+    "tags": [
+      "PRD",
+      "用户故事"
+    ],
+    "author": "王拾",
+    "likes": 964,
+    "uses": 2210,
+    "cover": "from-fuchsia-400 to-pink-500",
+    "createdAt": "2026-10-25",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-10-25",
+        "note": "初版",
+        "content": "需求：{{一句话需求}}\n目标用户：{{目标用户}}\n请输出：用户故事（As a…I want…so that…）、验收标准（Given/When/Then）、至少 5 个边界情况。"
+      }
+    ]
+  },
+  {
+    "id": "xhs-titles",
+    "title": "小红书爆款标题",
+    "description": "根据主题生成 10 个不同风格的标题，附带 emoji 与关键词。",
+    "category": "内容创作",
+    "model": "通用",
+    "tags": [
+      "小红书",
+      "标题"
+    ],
+    "author": "糖糖",
+    "likes": 3402,
+    "uses": 15880,
+    "cover": "from-rose-400 to-red-500",
+    "createdAt": "2026-10-29",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-10-29",
+        "note": "初版",
+        "content": "为主题「{{主题}}」写 10 个小红书标题，风格包括：数字型、反差型、提问型、情绪型。每个不超过 20 字，适当使用 emoji，目标人群是{{人群}}。"
+      }
+    ]
+  },
+  {
+    "id": "sql",
+    "title": "SQL 生成与解释",
+    "description": "用自然语言描述查询需求，生成 SQL 并逐行解释。",
+    "category": "编程开发",
+    "model": "通用",
+    "tags": [
+      "SQL",
+      "数据分析"
+    ],
+    "author": "陈默",
+    "likes": 1520,
+    "uses": 6033,
+    "cover": "from-cyan-400 to-blue-600",
+    "createdAt": "2026-09-15",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-09-15",
+        "note": "初版",
+        "content": "数据库：{{数据库类型}}\n表结构：\n{{表结构}}\n需求：{{查询需求}}\n请写出 SQL，并逐行解释，最后提示可能的性能问题。"
+      }
+    ]
+  },
+  {
+    "id": "reading-notes",
+    "title": "读书笔记提炼",
+    "description": "按章节提炼核心观点、金句与可行动建议。",
+    "category": "学习成长",
+    "model": "通用",
+    "tags": [
+      "读书",
+      "总结"
+    ],
+    "author": "李知",
+    "likes": 1102,
+    "uses": 3870,
+    "cover": "from-lime-400 to-green-600",
+    "createdAt": "2026-10-30",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-10-30",
+        "note": "初版",
+        "content": "以下是《{{书名}}》{{章节}}的内容：\n{{原文}}\n请输出：1) 3 个核心观点 2) 2 句金句（引用原文）3) 我明天就能做的 1 件事。"
+      }
+    ]
+  },
+  {
+    "id": "product-photo",
+    "title": "电商主图描述（绘图）",
+    "description": "生成适合 Midjourney / 即梦的电商产品场景图提示词。",
+    "category": "AI 绘图",
+    "model": "Midjourney",
+    "tags": [
+      "电商",
+      "场景图"
+    ],
+    "author": "阿 May",
+    "likes": 2780,
+    "uses": 8122,
+    "cover": "from-violet-400 to-purple-600",
+    "createdAt": "2026-10-08",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-10-08",
+        "note": "初版",
+        "content": "product photo of {{产品}}, placed in {{场景}}, soft window light, minimal props, warm low-saturation palette, commercial e-commerce style, high detail --ar {{比例}}"
+      }
+    ]
+  },
+  {
+    "id": "email-polish",
+    "title": "英文邮件润色",
+    "description": "保持原意，把中式英文改成地道商务表达，并解释修改点。",
+    "category": "办公效率",
+    "model": "通用",
+    "tags": [
+      "英语",
+      "邮件"
+    ],
+    "author": "Grace",
+    "likes": 890,
+    "uses": 2901,
+    "cover": "from-indigo-400 to-sky-500",
+    "createdAt": "2026-08-19",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-08-19",
+        "note": "初版",
+        "content": "请润色这封发给{{收件人身份}}的英文邮件，语气{{语气}}，保持原意，最后用中文列出主要修改点：\n\n{{邮件内容}}"
+      }
+    ]
+  },
+  {
+    "id": "mock-interview",
+    "title": "面试模拟官",
+    "description": "针对岗位 JD 进行多轮模拟面试，并给出评分。",
+    "category": "职场求职",
+    "model": "通用",
+    "tags": [
+      "面试",
+      "求职"
+    ],
+    "author": "王拾",
+    "likes": 2045,
+    "uses": 7012,
+    "cover": "from-orange-400 to-amber-600",
+    "createdAt": "2026-10-03",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-10-03",
+        "note": "初版",
+        "content": "你是{{公司类型}}的{{岗位}}面试官。根据以下 JD，每次只问我一个问题，我回答后给出 1-5 分评分和改进建议，共 {{题数}} 题。\nJD：{{JD}}"
+      }
+    ]
+  },
+  {
+    "id": "mermaid",
+    "title": "Mermaid 流程图",
+    "description": "把文字流程转成 Mermaid 代码，可直接粘贴到 Obsidian。",
+    "category": "编程开发",
+    "model": "通用",
+    "tags": [
+      "Mermaid",
+      "Obsidian"
+    ],
+    "author": "李知",
+    "likes": 640,
+    "uses": 1990,
+    "cover": "from-teal-400 to-emerald-600",
+    "createdAt": "2026-07-21",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-07-21",
+        "note": "初版",
+        "content": "把下面的流程转换成 Mermaid {{图类型}} 代码，节点用中文，只输出代码块：\n{{流程描述}}"
+      }
+    ]
+  },
+  {
+    "id": "storyboard",
+    "title": "短视频分镜脚本",
+    "description": "输入主题和时长，输出带镜头、画面、台词的分镜表。",
+    "category": "内容创作",
+    "model": "通用",
+    "tags": [
+      "短视频",
+      "分镜"
+    ],
+    "author": "糖糖",
+    "likes": 1733,
+    "uses": 4520,
+    "cover": "from-pink-400 to-rose-600",
+    "createdAt": "2026-09-09",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-09-09",
+        "note": "初版",
+        "content": "为「{{主题}}」写一个 {{时长}} 秒的短视频分镜脚本，用表格输出：镜号 / 景别 / 画面 / 台词 / 时长。开头 3 秒要有钩子。"
+      }
+    ]
+  },
+  {
+    "id": "competitor",
+    "title": "竞品分析框架",
+    "description": "从定位、功能、定价、渠道四个维度对比竞品。",
+    "category": "产品设计",
+    "model": "Claude",
+    "tags": [
+      "竞品",
+      "分析"
+    ],
+    "author": "林一",
+    "likes": 1190,
+    "uses": 3304,
+    "cover": "from-slate-400 to-slate-600",
+    "createdAt": "2026-08-30",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-08-30",
+        "note": "初版",
+        "content": "对比 {{我的产品}} 与 {{竞品列表}}，从定位、核心功能、定价、获客渠道四个维度输出表格，最后给出 3 条差异化建议。"
+      }
+    ]
+  },
+  {
+    "id": "watercolor",
+    "title": "水彩插画风格",
+    "description": "温柔的水彩儿童绘本风格插画提示词。",
+    "category": "AI 绘图",
+    "model": "Stable Diffusion",
+    "tags": [
+      "水彩",
+      "绘本"
+    ],
+    "author": "阿 May",
+    "likes": 2201,
+    "uses": 6440,
+    "cover": "from-yellow-300 to-pink-400",
+    "createdAt": "2026-10-27",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-10-27",
+        "note": "初版",
+        "content": "watercolor children's book illustration, {{主体}} in {{场景}}, soft pastel colors, gentle paper texture, whimsical, storybook style"
+      }
+    ]
+  },
+  {
+    "id": "regex",
+    "title": "正则表达式解释器",
+    "description": "逐段解释正则，并给出匹配与不匹配示例。",
+    "category": "编程开发",
+    "model": "GPT",
+    "tags": [
+      "正则"
+    ],
+    "author": "陈默",
+    "likes": 503,
+    "uses": 1402,
+    "cover": "from-blue-400 to-violet-500",
+    "createdAt": "2026-06-14",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-06-14",
+        "note": "初版",
+        "content": "逐段解释这个正则：{{正则}}\n然后各给 3 个能匹配和不能匹配的例子。"
+      }
+    ]
+  },
+  {
+    "id": "career",
+    "title": "职业规划对话",
+    "description": "通过提问帮你梳理接下来 1-3 年的职业方向。",
+    "category": "职场求职",
+    "model": "通用",
+    "tags": [
+      "规划",
+      "教练"
+    ],
+    "author": "苏小满",
+    "likes": 777,
+    "uses": 2033,
+    "cover": "from-green-400 to-cyan-500",
+    "createdAt": "2026-10-15",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-10-15",
+        "note": "初版",
+        "content": "你是一名职业教练。我目前是{{当前岗位}}，工作 {{年限}} 年。请通过一次一个问题的方式，帮我梳理接下来 1-3 年的方向。"
+      }
+    ]
+  },
+  {
+    "id": "meeting-notes",
+    "title": "会议纪要整理",
+    "description": "把杂乱的会议记录收成结论、负责人和截止日期。",
+    "category": "办公效率",
+    "model": "通用",
+    "tags": [
+      "会议",
+      "纪要"
+    ],
+    "author": "林一",
+    "likes": 842,
+    "uses": 2604,
+    "cover": "from-sky-500 to-blue-600",
+    "createdAt": "2026-10-18",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-10-18",
+        "note": "初版",
+        "content": "请把下面的会议记录整理成纪要。会议主题：{{主题}}。\n输出：1) 三句话摘要 2) 已决定事项 3) 待办表格（事项 / 负责人 / 截止日期）4) 未决问题。\n没有提到的信息写「未提及」，不要编造。\n\n{{会议记录}}"
+      }
+    ]
+  },
+  {
+    "id": "bug-report",
+    "title": "Bug 报告改写",
+    "description": "把一句「好像坏了」写成可复现的缺陷报告。",
+    "category": "编程开发",
+    "model": "GPT",
+    "tags": [
+      "Bug",
+      "测试"
+    ],
+    "author": "陈默",
+    "likes": 688,
+    "uses": 1740,
+    "cover": "from-red-400 to-orange-500",
+    "createdAt": "2026-09-22",
+    "versions": [
+      {
+        "version": 1,
+        "date": "2026-09-22",
+        "note": "初版",
+        "content": "把下面的问题描述改写成缺陷报告，包含：环境、复现步骤、期望结果、实际结果、严重程度（阻断 / 高 / 中 / 低）和还缺哪些信息。\n产品：{{产品}}\n描述：{{问题描述}}"
+      }
+    ]
+  }
+]
